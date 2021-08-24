@@ -1,3 +1,4 @@
+
 /***************
   Projeto: Botão de pânico WC Deficientes
   Autor: Victor Correia
@@ -67,7 +68,10 @@ void Alarm(){
 }
 void loop() {
   if(digitalRead(PIN_BUTTON_ALARM) == 0){
-    flag = 1;
+    delay(800);
+    if(digitalRead(PIN_BUTTON_ALARM) == 0){
+      flag = 1;
+    }
   }
   if(digitalRead(PIN_BUTTON_RESET) == 0){
     flag = 0;
